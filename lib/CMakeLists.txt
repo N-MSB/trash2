@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.2)
 
 project(ip_address_lib VERSION 0.0.1)
 
-set_library(ip_address ip_address.cpp ip_address.h)
+add_library(ip_address ip_address.cpp ip_address.h)
 
 set_target_properties(
     ip_address PROPERTIES
