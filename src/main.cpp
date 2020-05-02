@@ -30,7 +30,7 @@ vector<string> split(const string& str, char d)
 	return r;
 }
 
-int main(int argc, char const* argv[])
+int main()
 {
 	try
 	{
