@@ -32,4 +32,4 @@ else()
     )
 endif()
 
-install(TARGET ip_filter RUNTIME DESTINATION bin)
+install(TARGETS ip_filter RUNTIME DESTINATION bin)
