@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 3.2)
 
-project(homework2) # VERSION ${VERSION_NUMBER})
+project(homework2 VERSION 0.0.${VERSION_NUMBER})
 
 if("$ENV{TRAVIS_BUILD_NUMBER}" STREQUAL "")
-set(VERSION_NUMBER "0.0.42")
+set(VERSION_NUMBER "42")
 else()
-set(VERSION_NUMBER "0.0.$ENV{TRAVIS_BUILD_NUMBER}")
+set(VERSION_NUMBER "$ENV{TRAVIS_BUILD_NUMBER}")
 endif()
 
 ##project(homework2 VERSION_NUMBER) 0.0.$ENV{TRAVIS_BUILD_NUMBER})
