@@ -1,12 +1,14 @@
 cmake_minimum_required(VERSION 3.2)
 
-project(homework2 VERSION_NUMBER) # 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
 if("$ENV{TRAVIS_BUILD_NUMBER}" STREQUAL "")
 set(VERSION_NUMBER "0.0.42")
 else()
 set(VERSION_NUMBER "0.0.$ENV{TRAVIS_BUILD_NUMBER}")
 endif()
+
+project(homework2 VERSION_NUMBER) # 0.0.$ENV{TRAVIS_BUILD_NUMBER})
+
 
 add_subdirectory(src)
 add_subdirectory(lib)
