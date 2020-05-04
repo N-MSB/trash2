@@ -1,17 +1,6 @@
 cmake_minimum_required(VERSION 3.2)
 
-##project(homework2 VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
-
-project(homework02) # VERSION ${VERSION_NUMBER})
-
-set (homework02_VERSION_MAJOR 0)
-set (homework02_VERSION_MINOR 0)
-
-if("$ENV{TRAVIS_BUILD_NUMBER}" STREQUAL "")
-set(homework02_VERSION_PATCH 42)
-else()
-set(homework02_VERSION_PATCH $ENV{TRAVIS_BUILD_NUMBER})
-endif()
+project(main VERSION 0.0.2)
 
 add_executable(ip_filter main.cpp)
 
