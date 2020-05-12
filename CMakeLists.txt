@@ -16,7 +16,7 @@ project(homework2 VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
 add_subdirectory(src)
 add_subdirectory(lib)
-add_subderictory(test)
+add_subdirectory(test)
 
 set(CPACK_GENERATOR DEB)
 set(CPACK_PACKAGE_VERSION_MAJOR "${PROJECT_VERSION_MAJOR}")
