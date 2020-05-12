@@ -14,11 +14,9 @@ project(homework2 VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 #set(homework2_VERSION_PATCH $ENV{TRAVIS_BUILD_NUMBER})
 #endif()
 
-
-
-
 add_subdirectory(src)
 add_subdirectory(lib)
+add_subderictory(test)
 
 set(CPACK_GENERATOR DEB)
 set(CPACK_PACKAGE_VERSION_MAJOR "${PROJECT_VERSION_MAJOR}")
@@ -27,3 +25,6 @@ set(CPACK_PACKAGE_VERSION_PATCH "${PROJECT_VERSION_PATCH}")
 set(CPACK_PACKAGE_CONTACT example@example.com)
 include(CPack)
 
+enable_testing()
+
+add_test(test test/test)

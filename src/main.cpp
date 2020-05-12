@@ -32,21 +32,14 @@ vector<string> split(const string& str, char d)
 
 int main()
 {
+	vector<ip_address> ip_pool;
+
 	try
 	{
-		vector<ip_address> ip_pool;
-
 		for (string line; std::getline(cin, line);)
 		{
 			vector<string> v = split(line, '\t');
 			ip_pool.push_back(ParseIp(v.at(0)));
-		}
-
-		sort(ip_pool.begin(), ip_pool.end(), [](const ip_address& rhs, const ip_address& lhs) { return rhs > lhs; });
-
-		for (const auto& a : ip_pool)
-		{
-			cout << a << endl;
 		}
 	}
 	catch (const std::exception &e)
@@ -54,10 +47,51 @@ int main()
 		std::cerr << e.what() << endl;
 	}
 
+	sort(ip_pool.begin(), ip_pool.end(), [](const ip_address& ip1, const ip_address& ip2) { return ip1 > ip2; });
 
+	for (const auto& a : ip_pool)
+	{
+		cout << a << endl;
+	}
 	
-	cin.get();
-	cin.get();
+	for (const auto& a : ip_pool)
+	{
+		if (a.n1 == 1)
+		{ 
+			cout << a << endl;
+		}
+		else if (a.n1 == 0)
+		{
+			break;
+		}
+	}
+
+	for (const auto& a : ip_pool)
+	{
+		if (a.n1 == 46)// && a.n2 == 70)
+		{
+			if (a.n2 == 70)
+			{
+			cout << a << endl;
+			}
+			else if (a.n2 < 70)
+			{
+				break;
+			}
+		}
+		else if (a.n1 < 46)
+		{
+			break;
+		}
+	}
+
+	for (const auto& a : ip_pool)
+	{
+		if (a.n1 == 46 || a.n2 == 46 || a.n3 == 46 || a.n4 == 46)
+		{
+			cout << a << endl;
+		}
+	}
 
 	return 0;
 }
